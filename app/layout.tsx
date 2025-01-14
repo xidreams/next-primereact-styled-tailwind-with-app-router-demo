@@ -22,9 +22,74 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <PrimeReactProvider>
+
+
+
+
+
+<div className="min-h-screen flex flex-col">
+      <div className="normalDiv">
+        <div className="bg-gray-200 h-8 text-right flex items-center justify-end space-x-4 pr-4">
+          <a href="#" className="link flex items-center">
+            <span className="ml-2">&gt;</span>Insite
+          </a>
+          <a href="#" className="link flex items-center">
+            <span className="ml-2">&gt;</span>chevron.com
+          </a>
+          <a href="#" className="link flex items-center">
+            <span className="ml-2">&gt;</span>Finance
+          </a>
+        </div>
+      </div>
+      <div className="normalDiv">
+        <div style={{ padding: '10px 0' }}>
           <Header />
-          <main>{children}</main>
+        </div>
+      </div>
+      <div style={{ backgroundColor: '#f2f2f2', height: '80px', padding: '25px 0 0 0' }}>
+        <div className="normalDiv">
+          <div>
+            <h1 className="font-title text-2xl"><b>AZURE IDENTITY MANAGEMENT PORTAL</b></h1>
+          </div>
+        </div>
+      </div>
+      <div className="normalDiv">
+        <div style={{ padding: '2px 0 0 0', height: '20px', textAlign: 'right' }}>
+          glogininfo
+        </div>
+      </div>
+      <div className="normalDiv" style={{ minHeight: '300px', padding: '20px 0 80px 0' }}>
+        <div>
+          <h2 className="font-semibold text-xl">
+            <span style={{ background: 'linear-gradient(to right, #d4d4d4, #ffffff)', padding: '7px 30px 5px 7px' }}>
+              subtitle
+            </span>
+          </h2>
+          <div style={{ paddingTop: '40px' }}>
+             <main>{children}</main>
+          </div>
+        </div>
+      </div>
+      <div className="mt-auto">
+        <div className="normalDiv">
           <Footer />
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </PrimeReactProvider>
       </body>
     </html>
