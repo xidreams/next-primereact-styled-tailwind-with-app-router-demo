@@ -1,0 +1,49 @@
+If you need to set up multiple variables such as loginInfo, title, and loginDate, you can pass all of them as props to the child components. Here’s how you can do it:
+
+Declare multiple state variables in layouts.tsx:
+// layouts.tsx
+import React, { useState } from 'react';
+
+const Layout = ({ children }) => {
+  const [title, setTitle] = useState('Default Title');
+  const [loginInfo, setLoginInfo] = useState(null);
+  const [loginDate, setLoginDate] = useState(null);
+
+  return (
+    <>
+      <head>
+        <title>{title}</title>
+      </head>
+      <main>
+        {React.Children.map(children, child => 
+          React.cloneElement(child, { setTitle, setLoginInfo, setLoginDate })
+        )}
+      </main>
+    </>
+  );
+};
+
+export default Layout;
+
+Set the values in the child component:
+// /contact/page.tsx
+import React, { useEffect } from 'react';
+
+const ContactPage = ({ setTitle, setLoginInfo, setLoginDate }) => {
+  useEffect(() => {
+    setTitle('Contact Us');
+    setLoginInfo({ user: 'John Doe', status: 'Logged In' });
+    setLoginDate(new Date().toLocaleString());
+  }, [setTitle, setLoginInfo, setLoginDate]);
+
+  return <div>Contact Page Content</div>;
+};
+
+export default ContactPage;
+
+In this approach:
+
+The Layout component declares multiple state variables (title, loginInfo, and loginDate) and their corresponding setter functions.
+The React.Children.map function is used to iterate over the children and clone each child, passing the setter functions as props.
+The child component (ContactPage) uses the useEffect hook to set the values when it mounts.
+This method allows the child component to update multiple variables declared in the parent component (layouts.tsx).
