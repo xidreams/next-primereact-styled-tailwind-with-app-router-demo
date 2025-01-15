@@ -1,6 +1,11 @@
+"use client"
+
 import React from 'react';
+import useSubtitle from '../hooks/useSubtitle';
+
 
 const Contact = () => {
+  useSubtitle('CONTACT PAGE');
   return (
     <div>
       <h1>Contact Us</h1>

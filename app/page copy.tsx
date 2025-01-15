@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { Button } from 'primereact/button'
 import { InputText } from 'primereact/inputtext'
 import { ListBox } from 'primereact/listbox'
-import useSubtitle from './hooks/useSubtitle';
 
 export default function Home() {
   const [count, setCount] = useState<number>(0)
@@ -14,9 +13,7 @@ export default function Home() {
     { label: 'Option 1', value: 'option1' },
     { label: 'Option 2', value: 'option2' },
     { label: 'Option 3', value: 'option3' },
-  ];
-
-  useSubtitle('WWELCOME');
+  ]
 
   return (
     <>
